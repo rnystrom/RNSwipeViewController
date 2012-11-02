@@ -34,7 +34,7 @@ self.bottomViewController = [self.storyboard instantiateViewControllerWithIdenti
 
 ## Config ##
 
-<img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/dimension.jpg?raw=true" />
+<img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/dimensions.jpg?raw=true" />
 
 You can customize the width of each view controller's panel at run-time. Make sure the views in your view controllers are prepared to be smaller than your device's width/height.
 
