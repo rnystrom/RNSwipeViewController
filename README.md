@@ -7,7 +7,7 @@ Note: As of now, RNSwipeViewController is intended for use with portrait orienta
 
 ## Video ##
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/5Un5OesiJW8" frameborder="0" allowfullscreen></iframe>
+[Check out the Demo](http://www.youtube.com/watch?v=5Un5OesiJW8&feature=youtu.be)
 
 ## Installation ##
 
@@ -33,6 +33,8 @@ self.bottomViewController = [self.storyboard instantiateViewControllerWithIdenti
 ```
 
 ## Config ##
+
+<img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/dimension.jpg?raw=true" />
 
 You can customize the width of each view controller's panel at run-time. Make sure the views in your view controllers are prepared to be smaller than your device's width/height.
 
