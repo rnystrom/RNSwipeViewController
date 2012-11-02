@@ -3,6 +3,12 @@ RNSwipeViewController
 
 Seemlessly integrate beautifully functional view controllers into your app that are accessible with just the swipe of a finger. Inspiration for this project came from [David Smith](http://david-smith.org) and his gorgeous app [Check The Weather](http://checktheweather.co). 
 
+Note: As of now, RNSwipeViewController is intended for use with portrait orientation on iPhone/iPod only.
+
+## Video ##
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/5Un5OesiJW8" frameborder="0" allowfullscreen></iframe>
+
 ## Installation ##
 
 Drag the included <code>RNSwipeViewController</code> folder into your project. Then, include the following frameworks under *Link Binary With Libraries*:
