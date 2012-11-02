@@ -9,5 +9,6 @@
 #import "RNSwipeViewController.h"
 
 @interface RNExampleViewController : RNSwipeViewController
+<RNSwipeViewControllerDelegate>
 
 @end

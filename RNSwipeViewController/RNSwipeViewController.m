@@ -11,6 +11,15 @@
 #import "RNDirectionPanGestureRecognizer.h"
 #import "UIView+Sizes.h"
 
+NSString * const RNSwipeViewControllerLeftWillAppear = @"com.whoisryannystrom.RNSwipeViewControllerLeftWillAppear";
+NSString * const RNSwipeViewControllerLeftDidAppear = @"com.whoisryannystrom.RNSwipeViewControllerLeftDidAppear";
+NSString * const RNSwipeViewControllerRightWillAppear = @"com.whoisryannystrom.RNSwipeViewControllerRightWillAppear";
+NSString * const RNSwipeViewControllerRightDidAppear = @"com.whoisryannystrom.RNSwipeViewControllerRightDidAppear";
+NSString * const RNSwipeViewControllerBottomWillAppear = @"com.whoisryannystrom.RNSwipeViewControllerBottomWillAppear";
+NSString * const RNSwipeViewControllerBottomDidAppear = @"com.whoisryannystrom.RNSwipeViewControllerBottomDidAppear";
+NSString * const RNSwipeViewControllerCenterWillAppear = @"com.whoisryannystrom.RNSwipeViewControllerCenterWillAppear";
+NSString * const RNSwipeViewControllerCenterDidAppear = @"com.whoisryannystrom.RNSwipeViewControllerCenterDidAppear";
+
 static CGFloat kRNSwipeMaxFadeOpacity = 0.5f;
 static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
@@ -33,6 +42,8 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     
     RNDirectionPanGestureRecognizer *_panGesture;
     
+    UITapGestureRecognizer *_tapGesture;
+    
     CGRect _centerOriginal;
 
     CGRect _leftOriginal;
@@ -43,6 +54,8 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     CGRect _bottomActive;
     
     CGPoint _centerLastPoint;
+    
+    BOOL _isAnimating;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -68,6 +81,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     return self;
 }
 
+// initial vars
 - (void)_init {    
     _visibleState = RNSwipeVisibleCenter;
     
@@ -89,6 +103,8 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     _canShowBottom = YES;
     _canShowLeft = YES;
     _canShowRight = YES;
+    
+    _isAnimating = NO;
 }
 
 #pragma mark - Viewcontroller
@@ -103,33 +119,16 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     _centerOriginal = _centerContainer.frame;
     
     _rightContainer = [[UIView alloc] initWithFrame:self.view.bounds];
-    _rightContainer.width = self.rightVisibleWidth;
-    
-    _rightOriginal = _rightContainer.bounds;
-    _rightOriginal.origin.x = _centerOriginal.size.width;
-    
-    _rightActive = _rightOriginal;
-    _rightActive.origin.x = _centerContainer.width - _rightActive.size.width;
     
     _leftContainer = [[UIView alloc] initWithFrame:self.view.bounds];
-    _leftContainer.width = self.leftVisibleWidth;
-    
-    _leftOriginal = _leftContainer.bounds;
-    _leftOriginal.origin.x = - _leftOriginal.size.width;
-    
-    _leftActive = _leftOriginal;
-    _leftActive.origin = CGPointZero;
     
     _bottomContainer = [[UIView alloc] initWithFrame:self.view.bounds];
-    _bottomContainer.height = self.bottomVisibleHeight;
-    
-    _bottomOriginal = _bottomContainer.bounds;
-    _bottomOriginal.origin.y = _centerOriginal.size.height;
-    
-    _bottomActive = _bottomOriginal;
-    _bottomActive.origin.y = _centerContainer.height - _bottomActive.size.height;
     
     _centerLastPoint = CGPointZero;
+    
+    [self _layoutRightContainer];
+    [self _layoutLeftContainer];
+    [self _layoutBottomContainer];
     
     [self.view addSubview:_centerContainer];
     [self.view addSubview:_rightContainer];
@@ -147,6 +146,9 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     _panGesture.minimumNumberOfTouches = 1;
     _panGesture.maximumNumberOfTouches = 1;
     _panGesture.delegate = self;
+    
+    _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewWasTapped:)];
+    _tapGesture.numberOfTapsRequired = 1;
 
     [self.view addGestureRecognizer:_panGesture];
 }
@@ -160,11 +162,72 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     [super viewDidLayoutSubviews];
 }
 
+#pragma mark - Public methods
+
+- (void)showLeft {
+    if (self.leftViewController) {
+        [self _sendCenterToPoint:CGPointMake(self.leftVisibleWidth, 0) panel:_leftContainer toPoint:_leftActive.origin duration:kRNSwipeDefaultDuration];
+        self.visibleState = RNSwipeVisibleLeft;
+    }
+}
+
+- (void)showRight {
+    if (self.rightViewController) {
+        [self _sendCenterToPoint:CGPointMake(-1 * self.rightVisibleWidth, 0) panel:_rightContainer toPoint:_rightActive.origin duration:kRNSwipeDefaultDuration];
+        self.visibleState = RNSwipeVisibleRight;
+    }
+}
+
+- (void)showBottom {
+    if (self.bottomViewController) {
+        [self _sendCenterToPoint:CGPointMake(0, -1 * self.bottomVisibleHeight) panel:_bottomContainer toPoint:_bottomActive.origin duration:kRNSwipeDefaultDuration];
+        self.visibleState = RNSwipeVisibleBottom;
+    }
+}
+
+- (void)resetView {
+    [self _layoutContainersAnimated:YES duration:kRNSwipeDefaultDuration];
+}
+
+#pragma mark - Layout
+
+- (void)_layoutRightContainer {
+    _rightContainer.width = _rightVisibleWidth;
+    
+    _rightOriginal = _rightContainer.bounds;
+    _rightOriginal.origin.x = _centerOriginal.size.width;
+    
+    _rightActive = _rightOriginal;
+    _rightActive.origin.x = _centerContainer.width - _rightActive.size.width;
+}
+
+- (void)_layoutLeftContainer {
+    _leftContainer.width = self.leftVisibleWidth;
+    
+    _leftOriginal = _leftContainer.bounds;
+    _leftOriginal.origin.x = - _leftOriginal.size.width;
+    
+    _leftActive = _leftOriginal;
+    _leftActive.origin = CGPointZero;
+}
+
+- (void)_layoutBottomContainer {
+    _bottomContainer.height = self.bottomVisibleHeight;
+    
+    _bottomOriginal = _bottomContainer.bounds;
+    _bottomOriginal.origin.y = _centerOriginal.size.height;
+    
+    _bottomActive = _bottomOriginal;
+    _bottomActive.origin.y = _centerContainer.height - _bottomActive.size.height;
+}
+
 #pragma mark - Setters
 
 - (void)setCenterViewController:(UIViewController *)centerViewController {
     if (_centerViewController != centerViewController) {
         _centerViewController = centerViewController;
+        
+        [self addChildViewController:_centerViewController];
         
         [self _loadCenter];
         
@@ -176,6 +239,10 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     if (_rightViewController != rightViewController) {
         rightViewController.view.frame = _rightContainer.bounds;
         _rightViewController = rightViewController;
+        
+        [self addChildViewController:_rightViewController];
+        
+        [self _loadRight];
     }
 }
 
@@ -183,6 +250,10 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     if (_leftViewController != leftViewController) {
         leftViewController.view.frame = _leftContainer.bounds;
         _leftViewController = leftViewController;
+        
+        [self addChildViewController:_leftViewController];
+        
+        [self _loadLeft];
     }
 }
 
@@ -190,6 +261,10 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     if (_bottomViewController != bottomViewController) {
         bottomViewController.view.frame = _bottomContainer.bounds;
         _bottomViewController = bottomViewController;
+        
+        [self addChildViewController:_bottomViewController];
+        
+        [self _loadBottom];
     }
 }
 
@@ -217,6 +292,41 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
                              _bottomContainer.layer.shadowRadius = 0.f;
                              _bottomContainer.layer.shadowColor = nil;
                          }];
+    }
+}
+
+// when we are toggled, add a tap gesture to the center view
+- (void)setIsToggled:(BOOL)isToggled {
+    if (isToggled) {
+        [_centerContainer addGestureRecognizer:_tapGesture];
+    }
+    else {
+        [_centerContainer removeGestureRecognizer:_tapGesture];
+    }
+    _isToggled = isToggled;
+}
+
+- (void)setLeftVisibleWidth:(CGFloat)leftVisibleWidth {
+    if (_leftVisibleWidth != leftVisibleWidth) {
+        _leftVisibleWidth = leftVisibleWidth;
+        [self _layoutLeftContainer];
+        [self _layoutContainersAnimated:NO duration:0.f];
+    }
+}
+
+- (void)setRightVisibleWidth:(CGFloat)rightVisibleWidth {
+    if (_rightVisibleWidth != rightVisibleWidth) {
+        _rightVisibleWidth = rightVisibleWidth;
+        [self _layoutRightContainer];
+        [self _layoutContainersAnimated:NO duration:0.f];
+    }
+}
+
+- (void)setBottomVisibleHeight:(CGFloat)bottomVisibleHeight {
+    if (_bottomVisibleHeight != bottomVisibleHeight) {
+        _bottomVisibleHeight = bottomVisibleHeight;
+        [self _layoutBottomContainer];
+        [self _layoutContainersAnimated:NO duration:0.f];
     }
 }
 
@@ -259,6 +369,13 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 #pragma mark - Private Helpers
 
 - (void)_layoutContainersAnimated:(BOOL)animate duration:(NSTimeInterval)duration {
+    [[NSNotificationCenter defaultCenter] postNotificationName:RNSwipeViewControllerCenterWillAppear object:nil];
+    if (self.swipeDelegate && [self.swipeDelegate respondsToSelector:@selector(swipeController:willShowController:)]) {
+        [self.swipeDelegate swipeController:self willShowController:self.centerViewController];
+    }
+    
+    [self.centerViewController viewWillAppear:animate];
+    
     CGRect leftFrame = self.view.bounds;
     CGRect rightFrame = self.view.bounds;
     CGRect bottomFrame = self.view.bounds;
@@ -275,19 +392,33 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     void (^block)(void) = [self _toResetContainers];
     
     if (animate) {
-        [UIView animateWithDuration:kRNSwipeDefaultDuration
+        _fadeView.hidden = NO;
+        [UIView animateWithDuration:duration
                               delay:0
                             options:kNilOptions
                          animations:block
                          completion:^(BOOL finished){
                              if (finished) {
-                                 self.isToggled = NO;
+                                  self.isToggled = NO;
+                                 
+                                 [self.centerViewController viewDidAppear:animate];
+                                 
+                                 _isAnimating = NO;
                                  _centerLastPoint = CGPointZero;
                                  _fadeView.hidden = YES;
+                                 _activeContainer = _centerContainer;
+                                 
+                                 self.visibleState = RNSwipeVisibleCenter;
+                                 
+                                 [[NSNotificationCenter defaultCenter] postNotificationName:RNSwipeViewControllerCenterDidAppear object:nil];
+                                 if (self.swipeDelegate && [self.swipeDelegate respondsToSelector:@selector(swipeController:didShowController:)]) {
+                                     [self.swipeDelegate swipeController:self didShowController:self.centerViewController];
+                                 }
                              }
                          }];
     }
     else {
+        _fadeView.hidden = YES;
         block();
     }
     
@@ -335,6 +466,19 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 #pragma mark - Animations
 
+- (CGFloat)_remainingDuration:(CGFloat)position threshold:(CGFloat)threshold {
+    CGFloat maxDuration = kRNSwipeDefaultDuration;
+    threshold /= 2.f;
+    CGFloat suggestedDuration = maxDuration * (position / (CGFloat)threshold);
+    if (suggestedDuration < 0.05f) {
+        return 0.05f;
+    }
+    if (suggestedDuration < maxDuration) {
+        return suggestedDuration;
+    }
+    return maxDuration;
+}
+
 - (CGFloat)_filterTop:(CGFloat)translation {
     if (! self.canShowBottom) {
         return 0.f;
@@ -379,8 +523,13 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     return translation + _centerLastPoint.y;
 }
 
-- (void)_sendCenterToPoint:(CGPoint)centerPoint panel:(UIView*)container toPoint:(CGPoint)containerPoint {
-    [UIView animateWithDuration:kRNSwipeDefaultDuration
+- (void)_sendCenterToPoint:(CGPoint)centerPoint panel:(UIView*)container toPoint:(CGPoint)containerPoint duration:(NSTimeInterval)duration {
+    _fadeView.hidden = NO;
+    
+    [self.visibleController viewWillAppear:YES];
+    [self.centerViewController viewWillDisappear:YES];
+    
+    [UIView animateWithDuration:duration
                           delay:0
                         options:kNilOptions
                      animations:^{
@@ -390,46 +539,106 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
                      }
                      completion:^(BOOL finished){
                          if (finished) {
+                             _isAnimating = NO;
                              _centerLastPoint = _centerContainer.origin;
                              _activeContainer.layer.shouldRasterize = NO;
+                             self.isToggled = YES;
+                             
+                             [self.visibleController viewDidAppear:YES];
+                             [self.centerViewController viewDidDisappear:YES];
+                             
+                             NSString *notificationKey = nil;
+                             UIViewController *controller = nil;
+                             if (_activeContainer == _centerContainer) {
+                                 notificationKey = RNSwipeViewControllerCenterDidAppear;
+                                 controller = self.centerViewController;
+                             }
+                             else if (_activeContainer == _leftContainer) {
+                                 notificationKey = RNSwipeViewControllerLeftDidAppear;
+                                 controller = self.rightViewController;
+                             }
+                             else if (_activeContainer == _rightContainer) {
+                                 notificationKey = RNSwipeViewControllerRightDidAppear;
+                                 controller = self.rightViewController;
+                             }
+                             else if (_activeContainer == _bottomContainer) {
+                                 notificationKey = RNSwipeViewControllerBottomDidAppear;
+                                 controller = self.bottomViewController;
+                             }
+                             if (notificationKey) {
+                                 [[NSNotificationCenter defaultCenter] postNotificationName:notificationKey object:nil];
+                             }
+                             if (controller &&
+                                 self.swipeDelegate &&
+                                 [self.swipeDelegate respondsToSelector:@selector(swipeController:didShowController:)]) {
+                                 [self.swipeDelegate swipeController:self didShowController:controller];
+                             }
                          }
                      }];
 }
 
 - (void)_handlePan:(RNDirectionPanGestureRecognizer*)recognizer {
+    // beginning a pan gesture
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         _activeDirection = recognizer.direction;
         
+        _isAnimating = YES;
+        
         switch (_activeDirection) {
             case RNDirectionLeft: {
-                [self _loadRight];
-                [self _loadLeft];
                 _activeContainer = _rightContainer;
+                
+                if (self.visibleState == RNSwipeVisibleCenter) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:RNSwipeViewControllerLeftWillAppear object:nil];
+                    
+                    if (self.swipeDelegate && [self.swipeDelegate respondsToSelector:@selector(swipeController:willShowController:)]) {
+                        [self.swipeDelegate swipeController:self willShowController:self.leftViewController];
+                    }
+                }
             }
                 break;
             case RNDirectionRight: {
-                [self _loadRight];
-                [self _loadLeft];
                 _activeContainer = _leftContainer;
+                
+                if (self.visibleState == RNSwipeVisibleCenter) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:RNSwipeViewControllerRightWillAppear object:nil];
+                    
+                    if (self.swipeDelegate && [self.swipeDelegate respondsToSelector:@selector(swipeController:willShowController:)]) {
+                        [self.swipeDelegate swipeController:self willShowController:self.rightViewController];
+                    }
+                }
             }
                 break;
             case RNDirectionDown:
             case RNDirectionUp: {
                 _activeContainer = _bottomContainer;
-                [self _loadBottom];
+                
+                if (self.visibleState == RNSwipeVisibleCenter) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:RNSwipeViewControllerBottomWillAppear object:nil];
+                    
+                    if (self.swipeDelegate && [self.swipeDelegate respondsToSelector:@selector(swipeController:willShowController:)]) {
+                        [self.swipeDelegate swipeController:self willShowController:self.bottomViewController];
+                    }
+                }
             }
                 break;
         }
         
+        // add shadow to active layer
+        // could already be there if layer was visible
         _activeContainer.layer.shadowColor = [UIColor blackColor].CGColor;
         _activeContainer.layer.shadowRadius = 5.f;
         _activeContainer.layer.shadowOffset = CGSizeZero;
         _activeContainer.layer.shadowOpacity = 0.5f;
+        
+        // turn ON rasterizing for scrolling performance
         _activeContainer.layer.shouldRasterize = YES;
         
+        // ensure fadeing view is visible
         _fadeView.hidden = NO;
     }
     
+    // changing a pan gesture
     if (recognizer.state == UIGestureRecognizerStateChanged) {
         CGPoint translate = [recognizer translationInView:_centerContainer];
         BOOL doFade = NO;
@@ -464,6 +673,8 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
                 break;
         }
 
+        // calculate the amount of fading
+        // max static var defined as kRNSwipeMaxFadeOpacity in top of file
         if (doFade) {
             CGFloat position = 0.f;
             CGFloat threshold = 0.f;
@@ -485,30 +696,49 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
                 }
                     break;
             }
+            // max value is kRNSwipeMaxFadeOpacity, caluclation isn't perfect but i dont care
             CGFloat alpha = kRNSwipeMaxFadeOpacity * (position / (CGFloat)threshold);
             if (alpha > kRNSwipeMaxFadeOpacity) alpha = kRNSwipeMaxFadeOpacity;
             _fadeView.alpha = alpha;
         }
     }
 
+    // ending a pan gesture
     if (recognizer.state == UIGestureRecognizerStateEnded) {
+        // seems redundant, but it isn't
         if (_centerContainer.left > self.leftVisibleWidth / 2.f) {
-            [self _sendCenterToPoint:CGPointMake(self.leftVisibleWidth, 0) panel:_leftContainer toPoint:_leftActive.origin];
+            // left will be shown
+            CGFloat duration = [self _remainingDuration:abs(_centerContainer.left) threshold:self.leftVisibleWidth];
+            [self _sendCenterToPoint:CGPointMake(self.leftVisibleWidth, 0) panel:_leftContainer toPoint:_leftActive.origin duration:duration];
             self.visibleState = RNSwipeVisibleLeft;
         }
         else if (_centerContainer.left < (self.rightVisibleWidth / -2.f)) {
-            [self _sendCenterToPoint:CGPointMake(-1 * self.rightVisibleWidth, 0) panel:_rightContainer toPoint:_rightActive.origin];
+            // right will be shown
+            CGFloat duration = [self _remainingDuration:abs(_centerContainer.left) threshold:self.rightVisibleWidth];
+            [self _sendCenterToPoint:CGPointMake(-1 * self.rightVisibleWidth, 0) panel:_rightContainer toPoint:_rightActive.origin duration:duration];
             self.visibleState = RNSwipeVisibleRight;
         }
         else if (_centerContainer.top < self.bottomVisibleHeight / -2.f) {
-            [self _sendCenterToPoint:CGPointMake(0, -1 * self.bottomVisibleHeight) panel:_bottomContainer toPoint:_bottomActive.origin];
+            // bottom will be shown
+            CGFloat duration = [self _remainingDuration:abs(_centerContainer.top) threshold:self.bottomVisibleHeight];
+            [self _sendCenterToPoint:CGPointMake(0, -1 * self.bottomVisibleHeight) panel:_bottomContainer toPoint:_bottomActive.origin duration:duration];
             self.visibleState = RNSwipeVisibleBottom;
         }
         else {
-            [self _layoutContainersAnimated:YES duration:kRNSwipeDefaultDuration];
+            // not enough visible area, clear the scene
+            CGFloat position = _centerContainer.left == 0.f ? abs(_centerContainer.top) : abs(_centerContainer.left);
+            CGFloat threshold = _centerContainer.left == 0.f ? self.bottomVisibleHeight : self.leftVisibleWidth;
+            CGFloat duration = [self _remainingDuration:position threshold:threshold];
+            [self _layoutContainersAnimated:YES duration:duration];
             self.visibleState = RNSwipeVisibleCenter;
         }
     }
+}
+
+#pragma mark - Tap Gesture
+
+- (void)centerViewWasTapped:(UITapGestureRecognizer*)recognizer {
+    [self _layoutContainersAnimated:YES duration:kRNSwipeDefaultDuration];
 }
 
 @end

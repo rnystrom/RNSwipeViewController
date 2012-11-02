@@ -48,6 +48,12 @@ extern NSString * const RNSwipeViewControllerBottomWillAppear;
 /** Notification posted when controller did show the bottom view controller */
 extern NSString * const RNSwipeViewControllerBottomDidAppear;
 
+/** Notification posted when controller will show the center view controller */
+extern NSString * const RNSwipeViewControllerCenterWillAppear;
+
+/** Notification posted when controller did show the center view controller */
+extern NSString * const RNSwipeViewControllerCenterDidAppear;
+
 #import <UIKit/UIKit.h>
 #import "RNSwipeViewControllerDelegate.h"
 
@@ -57,6 +63,34 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
  */
 @interface RNSwipeViewController : UIViewController
 <UIGestureRecognizerDelegate>
+
+///---------------------------------------------------------------------------------------
+/// @name Methods
+///---------------------------------------------------------------------------------------
+
+/** Show the left view controller
+ 
+ @see resetView
+ */
+- (void)showLeft;
+
+/** Show the right view controller
+ 
+ @see resetView
+ */
+- (void)showRight;
+
+/** Show the bottom view controller
+ 
+ @see resetView
+ */
+- (void)showBottom;
+
+/** Hide all view controllers and show the center controller.
+ 
+ @see resetView
+ */
+- (void)resetView;
 
 ///---------------------------------------------------------------------------------------
 /// @name Controllers
@@ -154,12 +188,16 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
 
 /** Enable/disable the left view controller.
  
+ Default YES;
+ 
  @see canShowRight
  @see canShowBottom
  */
 @property (assign, nonatomic) BOOL canShowLeft;
 
 /** Enable/disable the right view controller.
+ 
+ Default YES;
  
  @see canShowLeft
  @see canShowBottom
@@ -168,10 +206,18 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
 
 /** Enable/disable the bottom view controller.
  
+ Default YES;
+ 
  @see canShowLeft
  @see canShowRight
  */
 @property (assign, nonatomic) BOOL canShowBottom;
+
+/** Enable/disable the bottom view controller.
+ 
+ Default YES;
+ */
+@property (assign, nonatomic) BOOL canTapOut;
 
 ///---------------------------------------------------------------------------------------
 /// @name Controller Delegates

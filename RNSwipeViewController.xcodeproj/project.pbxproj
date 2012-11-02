@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86526385164466E000379EA3 /* UIViewController+RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86526384164466E000379EA3 /* UIViewController+RNSwipeViewController.m */; };
+		86526389164469AA00379EA3 /* RNLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86526388164469AA00379EA3 /* RNLeftViewController.m */; };
 		86A9F8C61641AD3D00809316 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8C51641AD3D00809316 /* UIKit.framework */; };
 		86A9F8C81641AD3D00809316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8C71641AD3D00809316 /* Foundation.framework */; };
 		86A9F8CA1641AD3D00809316 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8C91641AD3D00809316 /* CoreGraphics.framework */; };
 		86A9F8EC1641AEB700809316 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8EB1641AEB700809316 /* QuartzCore.framework */; };
+		86DF0089164464FC00ECA1B8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DF0087164464FC00ECA1B8 /* MainStoryboard.storyboard */; };
+		86DF008C1644662900ECA1B8 /* RNToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DF008B1644662900ECA1B8 /* RNToolsViewController.m */; };
 		86EA76511644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA764B1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m */; };
 		86EA76521644402F0019E5E4 /* RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA764D1644402F0019E5E4 /* RNSwipeViewController.m */; };
 		86EA76531644402F0019E5E4 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA76501644402F0019E5E4 /* UIView+Sizes.m */; };
 		86EA7661164440A80019E5E4 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA765A164440A80019E5E4 /* RNAppDelegate.m */; };
-		86EA7662164440A80019E5E4 /* RNBlaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA765C164440A80019E5E4 /* RNBlaView.m */; };
 		86EA7663164440A80019E5E4 /* RNExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA765E164440A80019E5E4 /* RNExampleViewController.m */; };
 		86EA766E164440BA0019E5E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7665164440BA0019E5E4 /* Default-568h@2x.png */; };
 		86EA766F164440BA0019E5E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7666164440BA0019E5E4 /* Default.png */; };
@@ -26,11 +29,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86526383164466E000379EA3 /* UIViewController+RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RNSwipeViewController.h"; sourceTree = "<group>"; };
+		86526384164466E000379EA3 /* UIViewController+RNSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RNSwipeViewController.m"; sourceTree = "<group>"; };
+		86526387164469AA00379EA3 /* RNLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNLeftViewController.h; path = example/RNLeftViewController.h; sourceTree = "<group>"; };
+		86526388164469AA00379EA3 /* RNLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNLeftViewController.m; path = example/RNLeftViewController.m; sourceTree = "<group>"; };
 		86A9F8C11641AD3D00809316 /* RNSwipeViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNSwipeViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A9F8C51641AD3D00809316 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		86A9F8C71641AD3D00809316 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86A9F8C91641AD3D00809316 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		86A9F8EB1641AEB700809316 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		86DF0088164464FC00ECA1B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = example/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		86DF008A1644662900ECA1B8 /* RNToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNToolsViewController.h; path = example/RNToolsViewController.h; sourceTree = "<group>"; };
+		86DF008B1644662900ECA1B8 /* RNToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNToolsViewController.m; path = example/RNToolsViewController.m; sourceTree = "<group>"; };
 		86EA764A1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
 		86EA764B1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
 		86EA764C1644402F0019E5E4 /* RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewController.h; sourceTree = "<group>"; };
@@ -40,8 +50,6 @@
 		86EA76501644402F0019E5E4 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
 		86EA7659164440A80019E5E4 /* RNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNAppDelegate.h; path = example/RNAppDelegate.h; sourceTree = "<group>"; };
 		86EA765A164440A80019E5E4 /* RNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNAppDelegate.m; path = example/RNAppDelegate.m; sourceTree = "<group>"; };
-		86EA765B164440A80019E5E4 /* RNBlaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNBlaView.h; path = example/RNBlaView.h; sourceTree = "<group>"; };
-		86EA765C164440A80019E5E4 /* RNBlaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNBlaView.m; path = example/RNBlaView.m; sourceTree = "<group>"; };
 		86EA765D164440A80019E5E4 /* RNExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNExampleViewController.h; path = example/RNExampleViewController.h; sourceTree = "<group>"; };
 		86EA765E164440A80019E5E4 /* RNExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNExampleViewController.m; path = example/RNExampleViewController.m; sourceTree = "<group>"; };
 		86EA765F164440A80019E5E4 /* RNSwipeViewController-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "RNSwipeViewController-Info.plist"; path = "../example/RNSwipeViewController-Info.plist"; sourceTree = "<group>"; };
@@ -72,10 +80,13 @@
 		86A9F8B61641AD3D00809316 = {
 			isa = PBXGroup;
 			children = (
+				86526387164469AA00379EA3 /* RNLeftViewController.h */,
+				86526388164469AA00379EA3 /* RNLeftViewController.m */,
+				86DF0087164464FC00ECA1B8 /* MainStoryboard.storyboard */,
+				86DF008A1644662900ECA1B8 /* RNToolsViewController.h */,
+				86DF008B1644662900ECA1B8 /* RNToolsViewController.m */,
 				86EA7659164440A80019E5E4 /* RNAppDelegate.h */,
 				86EA765A164440A80019E5E4 /* RNAppDelegate.m */,
-				86EA765B164440A80019E5E4 /* RNBlaView.h */,
-				86EA765C164440A80019E5E4 /* RNBlaView.m */,
 				86EA765D164440A80019E5E4 /* RNExampleViewController.h */,
 				86EA765E164440A80019E5E4 /* RNExampleViewController.m */,
 				86EA76491644402F0019E5E4 /* RNSwipeViewController */,
@@ -129,6 +140,8 @@
 				86EA764E1644402F0019E5E4 /* RNSwipeViewControllerDelegate.h */,
 				86EA764F1644402F0019E5E4 /* UIView+Sizes.h */,
 				86EA76501644402F0019E5E4 /* UIView+Sizes.m */,
+				86526383164466E000379EA3 /* UIViewController+RNSwipeViewController.h */,
+				86526384164466E000379EA3 /* UIViewController+RNSwipeViewController.m */,
 			);
 			path = RNSwipeViewController;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 				86EA7670164440BA0019E5E4 /* Default@2x.png in Resources */,
 				86EA7671164440BA0019E5E4 /* InfoPlist.strings in Resources */,
 				86EA7672164440BA0019E5E4 /* MainStoryboard.storyboard in Resources */,
+				86DF0089164464FC00ECA1B8 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,15 +228,25 @@
 				86EA76521644402F0019E5E4 /* RNSwipeViewController.m in Sources */,
 				86EA76531644402F0019E5E4 /* UIView+Sizes.m in Sources */,
 				86EA7661164440A80019E5E4 /* RNAppDelegate.m in Sources */,
-				86EA7662164440A80019E5E4 /* RNBlaView.m in Sources */,
 				86EA7663164440A80019E5E4 /* RNExampleViewController.m in Sources */,
 				86EA7673164440BA0019E5E4 /* main.m in Sources */,
+				86DF008C1644662900ECA1B8 /* RNToolsViewController.m in Sources */,
+				86526385164466E000379EA3 /* UIViewController+RNSwipeViewController.m in Sources */,
+				86526389164469AA00379EA3 /* RNLeftViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		86DF0087164464FC00ECA1B8 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86DF0088164464FC00ECA1B8 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		86EA7669164440BA0019E5E4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,6 +322,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/RNSwipeViewController-Prefix.pch";
 				INFOPLIST_FILE = "example/RNSwipeViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -309,6 +334,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/RNSwipeViewController-Prefix.pch";
 				INFOPLIST_FILE = "example/RNSwipeViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

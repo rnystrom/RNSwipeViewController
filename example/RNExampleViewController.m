@@ -31,12 +31,24 @@
     self.leftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"];
     self.rightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"];
     self.bottomViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"bottomViewController"];
+    
+    self.swipeDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Swipe delegate
+
+- (void)swipeController:(RNSwipeViewController *)swipeController willShowController:(UIViewController *)controller {
+    NSLog(@"will show");
+}
+
+- (void)swipeController:(RNSwipeViewController *)swipeController didShowController:(UIViewController *)controller {
+    NSLog(@"did show");
 }
 
 @end

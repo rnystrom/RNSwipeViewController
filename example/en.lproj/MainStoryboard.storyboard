@@ -18,11 +18,11 @@
             </objects>
             <point key="canvasLocation" x="448" y="174"/>
         </scene>
-        <!--Bl-->
+        <!--Left View Controller-->
         <scene sceneID="hBY-3P-ava">
             <objects>
-                <viewController storyboardIdentifier="leftViewController" id="bNW-Kn-y0R" customClass="RNBl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hF6-Nu-xlk" customClass="RNBlaView">
+                <viewController storyboardIdentifier="leftViewController" id="bNW-Kn-y0R" customClass="RNLeftViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hF6-Nu-xlk">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.56451148370000004" green="1" blue="0.46124176560000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,11 +32,11 @@
             </objects>
             <point key="canvasLocation" x="836" y="174"/>
         </scene>
-        <!--Bl-->
+        <!--View Controller-->
         <scene sceneID="2Vl-e9-ZfG">
             <objects>
-                <viewController storyboardIdentifier="bottomViewController" id="SSu-XY-qlk" customClass="RNBl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bcE-iT-4f1" customClass="RNBlaView">
+                <viewController storyboardIdentifier="bottomViewController" id="SSu-XY-qlk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcE-iT-4f1">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.42811399039999998" green="0.53271815919999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,11 +46,11 @@
             </objects>
             <point key="canvasLocation" x="1222" y="845"/>
         </scene>
-        <!--Bl-->
+        <!--View Controller-->
         <scene sceneID="7pV-b6-HTP">
             <objects>
-                <viewController storyboardIdentifier="rightViewController" id="cPS-IF-tyv" customClass="RNBl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9IL-n0-zCs" customClass="RNBlaView">
+                <viewController storyboardIdentifier="rightViewController" id="cPS-IF-tyv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9IL-n0-zCs">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.84386957910000004" green="0.1883426315" blue="0.25255578540000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,14 +60,92 @@
             </objects>
             <point key="canvasLocation" x="1590" y="174"/>
         </scene>
-        <!--Bl-->
+        <!--Tools View Controller-->
         <scene sceneID="3pF-yO-reo">
             <objects>
-                <viewController storyboardIdentifier="centerViewController" id="ybO-E2-0HH" customClass="RNBl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V81-Z1-Ojk" customClass="RNBlaView">
+                <viewController storyboardIdentifier="centerViewController" id="ybO-E2-0HH" customClass="RNToolsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V81-Z1-Ojk">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-mJ-9xg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="zNY-nq-TO8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Toggle Left">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleLeft:" destination="ybO-E2-0HH" eventType="touchUpInside" id="JTl-1i-ZSk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNF-Ke-Aq5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="76i-pc-8Ce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Toggle Right">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleRight:" destination="ybO-E2-0HH" eventType="touchUpInside" id="WtE-ix-lwH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XD-OC-UyW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="sg0-4V-BQp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Toggle Bottom">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleBottom:" destination="ybO-E2-0HH" eventType="touchUpInside" id="bsw-4S-qbE"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="100" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="Ive-t3-pKv">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="77q-Jj-UCU"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="ybO-E2-0HH" eventType="valueChanged" id="dwE-wP-ewV"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bottom Height" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev5-EC-S1g">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="7Jt-RT-g2d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0XD-OC-UyW" firstAttribute="top" secondItem="V81-Z1-Ojk" secondAttribute="top" constant="108" id="CdD-Rh-m9y"/>
+                            <constraint firstAttribute="trailing" secondItem="UNF-Ke-Aq5" secondAttribute="trailing" constant="28" id="Cgc-sc-lAz"/>
+                            <constraint firstItem="Ev5-EC-S1g" firstAttribute="top" secondItem="V81-Z1-Ojk" secondAttribute="top" constant="195" id="F2i-YV-3in"/>
+                            <constraint firstItem="Ive-t3-pKv" firstAttribute="centerX" secondItem="V81-Z1-Ojk" secondAttribute="centerX" type="default" id="Jfr-r8-lQe"/>
+                            <constraint firstItem="zBg-mJ-9xg" firstAttribute="leading" secondItem="V81-Z1-Ojk" secondAttribute="leading" constant="29" id="PrW-T8-GaH"/>
+                            <constraint firstItem="Ive-t3-pKv" firstAttribute="top" secondItem="Ev5-EC-S1g" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RFq-i9-TTJ"/>
+                            <constraint firstItem="zBg-mJ-9xg" firstAttribute="top" secondItem="V81-Z1-Ojk" secondAttribute="top" constant="31" id="Rdm-UM-yxl"/>
+                            <constraint firstItem="Ev5-EC-S1g" firstAttribute="centerX" secondItem="Ive-t3-pKv" secondAttribute="centerX" type="default" id="TMB-DP-3aE"/>
+                            <constraint firstItem="Ev5-EC-S1g" firstAttribute="centerX" secondItem="0XD-OC-UyW" secondAttribute="centerX" type="default" id="h9L-zm-VRs"/>
+                            <constraint firstItem="UNF-Ke-Aq5" firstAttribute="baseline" secondItem="zBg-mJ-9xg" secondAttribute="baseline" type="default" id="soV-js-sZI"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0z-hP-pdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,14 +154,26 @@
         </scene>
     </scenes>
     <classes>
-        <class className="RNBlaView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RNBlaView.h"/>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="RNExampleViewController" superclassName="RNSwipeViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RNExampleViewController.h"/>
         </class>
+        <class className="RNLeftViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RNLeftViewController.h"/>
+        </class>
         <class className="RNSwipeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RNSwipeViewController.h"/>
+        </class>
+        <class className="RNToolsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RNToolsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderChanged:"/>
+                <relationship kind="action" name="toggleBottom:"/>
+                <relationship kind="action" name="toggleLeft:"/>
+                <relationship kind="action" name="toggleRight:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
