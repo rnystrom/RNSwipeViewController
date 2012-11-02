@@ -7,51 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		862361B31641EA4E00F021AF /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 862361B21641EA4E00F021AF /* RNDirectionPanGestureRecognizer.m */; };
 		86A9F8C61641AD3D00809316 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8C51641AD3D00809316 /* UIKit.framework */; };
 		86A9F8C81641AD3D00809316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8C71641AD3D00809316 /* Foundation.framework */; };
 		86A9F8CA1641AD3D00809316 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8C91641AD3D00809316 /* CoreGraphics.framework */; };
-		86A9F8D01641AD3D00809316 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86A9F8CE1641AD3D00809316 /* InfoPlist.strings */; };
-		86A9F8D21641AD3D00809316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A9F8D11641AD3D00809316 /* main.m */; };
-		86A9F8D61641AD3D00809316 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A9F8D51641AD3D00809316 /* RNAppDelegate.m */; };
-		86A9F8D81641AD3D00809316 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A9F8D71641AD3D00809316 /* Default.png */; };
-		86A9F8DA1641AD3D00809316 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A9F8D91641AD3D00809316 /* Default@2x.png */; };
-		86A9F8DC1641AD3D00809316 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A9F8DB1641AD3D00809316 /* Default-568h@2x.png */; };
-		86A9F8DF1641AD3D00809316 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A9F8DD1641AD3D00809316 /* MainStoryboard.storyboard */; };
-		86A9F8EA1641AE2500809316 /* RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A9F8E91641AE2500809316 /* RNSwipeViewController.m */; };
 		86A9F8EC1641AEB700809316 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9F8EB1641AEB700809316 /* QuartzCore.framework */; };
-		86A9F8FB1641C30C00809316 /* RNExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A9F8FA1641C30C00809316 /* RNExampleViewController.m */; };
-		86AEAA491643029B00F68499 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AEAA481643029B00F68499 /* UIView+Sizes.m */; };
-		86AEAA5116430B8800F68499 /* RNBlaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AEAA5016430B8800F68499 /* RNBlaView.m */; };
+		86EA76511644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA764B1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m */; };
+		86EA76521644402F0019E5E4 /* RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA764D1644402F0019E5E4 /* RNSwipeViewController.m */; };
+		86EA76531644402F0019E5E4 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA76501644402F0019E5E4 /* UIView+Sizes.m */; };
+		86EA7661164440A80019E5E4 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA765A164440A80019E5E4 /* RNAppDelegate.m */; };
+		86EA7662164440A80019E5E4 /* RNBlaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA765C164440A80019E5E4 /* RNBlaView.m */; };
+		86EA7663164440A80019E5E4 /* RNExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA765E164440A80019E5E4 /* RNExampleViewController.m */; };
+		86EA766E164440BA0019E5E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7665164440BA0019E5E4 /* Default-568h@2x.png */; };
+		86EA766F164440BA0019E5E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7666164440BA0019E5E4 /* Default.png */; };
+		86EA7670164440BA0019E5E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7667164440BA0019E5E4 /* Default@2x.png */; };
+		86EA7671164440BA0019E5E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7669164440BA0019E5E4 /* InfoPlist.strings */; };
+		86EA7672164440BA0019E5E4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EA766B164440BA0019E5E4 /* MainStoryboard.storyboard */; };
+		86EA7673164440BA0019E5E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA766D164440BA0019E5E4 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		862361B11641EA4E00F021AF /* RNDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
-		862361B21641EA4E00F021AF /* RNDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
 		86A9F8C11641AD3D00809316 /* RNSwipeViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNSwipeViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A9F8C51641AD3D00809316 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		86A9F8C71641AD3D00809316 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86A9F8C91641AD3D00809316 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		86A9F8CD1641AD3D00809316 /* RNSwipeViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNSwipeViewController-Info.plist"; sourceTree = "<group>"; };
-		86A9F8CF1641AD3D00809316 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		86A9F8D11641AD3D00809316 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		86A9F8D31641AD3D00809316 /* RNSwipeViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNSwipeViewController-Prefix.pch"; sourceTree = "<group>"; };
-		86A9F8D41641AD3D00809316 /* RNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNAppDelegate.h; path = RNSwipeViewController/RNAppDelegate.h; sourceTree = "<group>"; };
-		86A9F8D51641AD3D00809316 /* RNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNAppDelegate.m; path = RNSwipeViewController/RNAppDelegate.m; sourceTree = "<group>"; };
-		86A9F8D71641AD3D00809316 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		86A9F8D91641AD3D00809316 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		86A9F8DB1641AD3D00809316 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		86A9F8DE1641AD3D00809316 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		86A9F8E81641AE2500809316 /* RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewController.h; sourceTree = "<group>"; };
-		86A9F8E91641AE2500809316 /* RNSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSwipeViewController.m; sourceTree = "<group>"; };
 		86A9F8EB1641AEB700809316 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		86A9F8F91641C30C00809316 /* RNExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNExampleViewController.h; path = RNSwipeViewController/RNExampleViewController.h; sourceTree = "<group>"; };
-		86A9F8FA1641C30C00809316 /* RNExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNExampleViewController.m; path = RNSwipeViewController/RNExampleViewController.m; sourceTree = "<group>"; };
-		86AEAA471643029B00F68499 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Sizes.h"; path = "../UIView+Sizes.h"; sourceTree = "<group>"; };
-		86AEAA481643029B00F68499 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Sizes.m"; path = "../UIView+Sizes.m"; sourceTree = "<group>"; };
-		86AEAA4F16430B8800F68499 /* RNBlaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNBlaView.h; path = RNSwipeViewController/RNBlaView.h; sourceTree = "<group>"; };
-		86AEAA5016430B8800F68499 /* RNBlaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNBlaView.m; path = RNSwipeViewController/RNBlaView.m; sourceTree = "<group>"; };
-		86EA763D16441FD70019E5E4 /* RNSwipeViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewControllerDelegate.h; sourceTree = "<group>"; };
+		86EA764A1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
+		86EA764B1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
+		86EA764C1644402F0019E5E4 /* RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewController.h; sourceTree = "<group>"; };
+		86EA764D1644402F0019E5E4 /* RNSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSwipeViewController.m; sourceTree = "<group>"; };
+		86EA764E1644402F0019E5E4 /* RNSwipeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewControllerDelegate.h; sourceTree = "<group>"; };
+		86EA764F1644402F0019E5E4 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
+		86EA76501644402F0019E5E4 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
+		86EA7659164440A80019E5E4 /* RNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNAppDelegate.h; path = example/RNAppDelegate.h; sourceTree = "<group>"; };
+		86EA765A164440A80019E5E4 /* RNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNAppDelegate.m; path = example/RNAppDelegate.m; sourceTree = "<group>"; };
+		86EA765B164440A80019E5E4 /* RNBlaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNBlaView.h; path = example/RNBlaView.h; sourceTree = "<group>"; };
+		86EA765C164440A80019E5E4 /* RNBlaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNBlaView.m; path = example/RNBlaView.m; sourceTree = "<group>"; };
+		86EA765D164440A80019E5E4 /* RNExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNExampleViewController.h; path = example/RNExampleViewController.h; sourceTree = "<group>"; };
+		86EA765E164440A80019E5E4 /* RNExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNExampleViewController.m; path = example/RNExampleViewController.m; sourceTree = "<group>"; };
+		86EA765F164440A80019E5E4 /* RNSwipeViewController-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "RNSwipeViewController-Info.plist"; path = "../example/RNSwipeViewController-Info.plist"; sourceTree = "<group>"; };
+		86EA7660164440A80019E5E4 /* RNSwipeViewController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RNSwipeViewController-Prefix.pch"; path = "../example/RNSwipeViewController-Prefix.pch"; sourceTree = "<group>"; };
+		86EA7665164440BA0019E5E4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "example/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		86EA7666164440BA0019E5E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = example/Default.png; sourceTree = SOURCE_ROOT; };
+		86EA7667164440BA0019E5E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "example/Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		86EA766A164440BA0019E5E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		86EA766C164440BA0019E5E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		86EA766D164440BA0019E5E4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = example/main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +72,14 @@
 		86A9F8B61641AD3D00809316 = {
 			isa = PBXGroup;
 			children = (
-				86A9F8D41641AD3D00809316 /* RNAppDelegate.h */,
-				86A9F8D51641AD3D00809316 /* RNAppDelegate.m */,
-				86A9F8DD1641AD3D00809316 /* MainStoryboard.storyboard */,
-				86AEAA4F16430B8800F68499 /* RNBlaView.h */,
-				86AEAA5016430B8800F68499 /* RNBlaView.m */,
-				86A9F8F91641C30C00809316 /* RNExampleViewController.h */,
-				86A9F8FA1641C30C00809316 /* RNExampleViewController.m */,
+				86EA7659164440A80019E5E4 /* RNAppDelegate.h */,
+				86EA765A164440A80019E5E4 /* RNAppDelegate.m */,
+				86EA765B164440A80019E5E4 /* RNBlaView.h */,
+				86EA765C164440A80019E5E4 /* RNBlaView.m */,
+				86EA765D164440A80019E5E4 /* RNExampleViewController.h */,
+				86EA765E164440A80019E5E4 /* RNExampleViewController.m */,
+				86EA76491644402F0019E5E4 /* RNSwipeViewController */,
 				86A9F8CC1641AD3D00809316 /* Supporting Files */,
-				86A9F8CB1641AD3D00809316 /* RNSwipeViewController */,
 				86A9F8C41641AD3D00809316 /* Frameworks */,
 				86A9F8C21641AD3D00809316 /* Products */,
 			);
@@ -105,34 +104,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		86A9F8CB1641AD3D00809316 /* RNSwipeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				862361B11641EA4E00F021AF /* RNDirectionPanGestureRecognizer.h */,
-				862361B21641EA4E00F021AF /* RNDirectionPanGestureRecognizer.m */,
-				86AEAA471643029B00F68499 /* UIView+Sizes.h */,
-				86AEAA481643029B00F68499 /* UIView+Sizes.m */,
-				86EA763D16441FD70019E5E4 /* RNSwipeViewControllerDelegate.h */,
-				86A9F8E81641AE2500809316 /* RNSwipeViewController.h */,
-				86A9F8E91641AE2500809316 /* RNSwipeViewController.m */,
-			);
-			path = RNSwipeViewController;
-			sourceTree = "<group>";
-		};
 		86A9F8CC1641AD3D00809316 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				86A9F8CD1641AD3D00809316 /* RNSwipeViewController-Info.plist */,
-				86A9F8CE1641AD3D00809316 /* InfoPlist.strings */,
-				86A9F8D11641AD3D00809316 /* main.m */,
-				86A9F8D31641AD3D00809316 /* RNSwipeViewController-Prefix.pch */,
-				86A9F8D71641AD3D00809316 /* Default.png */,
-				86A9F8D91641AD3D00809316 /* Default@2x.png */,
-				86A9F8DB1641AD3D00809316 /* Default-568h@2x.png */,
+				86EA765F164440A80019E5E4 /* RNSwipeViewController-Info.plist */,
+				86EA7660164440A80019E5E4 /* RNSwipeViewController-Prefix.pch */,
+				86EA7665164440BA0019E5E4 /* Default-568h@2x.png */,
+				86EA7666164440BA0019E5E4 /* Default.png */,
+				86EA7667164440BA0019E5E4 /* Default@2x.png */,
+				86EA7668164440BA0019E5E4 /* en.lproj */,
+				86EA766D164440BA0019E5E4 /* main.m */,
 			);
 			name = "Supporting Files";
 			path = RNSwipeViewController;
 			sourceTree = "<group>";
+		};
+		86EA76491644402F0019E5E4 /* RNSwipeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				86EA764A1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.h */,
+				86EA764B1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m */,
+				86EA764C1644402F0019E5E4 /* RNSwipeViewController.h */,
+				86EA764D1644402F0019E5E4 /* RNSwipeViewController.m */,
+				86EA764E1644402F0019E5E4 /* RNSwipeViewControllerDelegate.h */,
+				86EA764F1644402F0019E5E4 /* UIView+Sizes.h */,
+				86EA76501644402F0019E5E4 /* UIView+Sizes.m */,
+			);
+			path = RNSwipeViewController;
+			sourceTree = "<group>";
+		};
+		86EA7668164440BA0019E5E4 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7669164440BA0019E5E4 /* InfoPlist.strings */,
+				86EA766B164440BA0019E5E4 /* MainStoryboard.storyboard */,
+			);
+			name = en.lproj;
+			path = example/en.lproj;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -186,11 +195,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86A9F8D01641AD3D00809316 /* InfoPlist.strings in Resources */,
-				86A9F8D81641AD3D00809316 /* Default.png in Resources */,
-				86A9F8DA1641AD3D00809316 /* Default@2x.png in Resources */,
-				86A9F8DC1641AD3D00809316 /* Default-568h@2x.png in Resources */,
-				86A9F8DF1641AD3D00809316 /* MainStoryboard.storyboard in Resources */,
+				86EA766E164440BA0019E5E4 /* Default-568h@2x.png in Resources */,
+				86EA766F164440BA0019E5E4 /* Default.png in Resources */,
+				86EA7670164440BA0019E5E4 /* Default@2x.png in Resources */,
+				86EA7671164440BA0019E5E4 /* InfoPlist.strings in Resources */,
+				86EA7672164440BA0019E5E4 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,34 +210,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86A9F8D21641AD3D00809316 /* main.m in Sources */,
-				86A9F8D61641AD3D00809316 /* RNAppDelegate.m in Sources */,
-				86A9F8EA1641AE2500809316 /* RNSwipeViewController.m in Sources */,
-				86A9F8FB1641C30C00809316 /* RNExampleViewController.m in Sources */,
-				862361B31641EA4E00F021AF /* RNDirectionPanGestureRecognizer.m in Sources */,
-				86AEAA491643029B00F68499 /* UIView+Sizes.m in Sources */,
-				86AEAA5116430B8800F68499 /* RNBlaView.m in Sources */,
+				86EA76511644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m in Sources */,
+				86EA76521644402F0019E5E4 /* RNSwipeViewController.m in Sources */,
+				86EA76531644402F0019E5E4 /* UIView+Sizes.m in Sources */,
+				86EA7661164440A80019E5E4 /* RNAppDelegate.m in Sources */,
+				86EA7662164440A80019E5E4 /* RNBlaView.m in Sources */,
+				86EA7663164440A80019E5E4 /* RNExampleViewController.m in Sources */,
+				86EA7673164440BA0019E5E4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		86A9F8CE1641AD3D00809316 /* InfoPlist.strings */ = {
+		86EA7669164440BA0019E5E4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				86A9F8CF1641AD3D00809316 /* en */,
+				86EA766A164440BA0019E5E4 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		86A9F8DD1641AD3D00809316 /* MainStoryboard.storyboard */ = {
+		86EA766B164440BA0019E5E4 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				86A9F8DE1641AD3D00809316 /* en */,
+				86EA766C164440BA0019E5E4 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			path = RNSwipeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -288,8 +296,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RNSwipeViewController/RNSwipeViewController-Prefix.pch";
-				INFOPLIST_FILE = "RNSwipeViewController/RNSwipeViewController-Info.plist";
+				GCC_PREFIX_HEADER = "example/RNSwipeViewController-Prefix.pch";
+				INFOPLIST_FILE = "example/RNSwipeViewController-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -299,8 +307,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RNSwipeViewController/RNSwipeViewController-Prefix.pch";
-				INFOPLIST_FILE = "RNSwipeViewController/RNSwipeViewController-Info.plist";
+				GCC_PREFIX_HEADER = "example/RNSwipeViewController-Prefix.pch";
+				INFOPLIST_FILE = "example/RNSwipeViewController-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

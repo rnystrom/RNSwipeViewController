@@ -23,20 +23,12 @@
  * SOFTWARE.
  */
 
-#import <UIKit/UIKit.h>
-#import "RNSwipeViewControllerDelegate.h"
-
 typedef enum : u_int16_t {
     RNSwipeVisibleLeft = 0x0,
     RNSwipeVisibleCenter = 0x1,
     RNSwipeVisibleRight = 0x2,
     RNSwipeVisibleBottom = 0x3
 } RNSwipeVisible;
-
-/**---------------------------------------------------------------------------------------
- * @name Notifications
- *  ---------------------------------------------------------------------------------------
- */
 
 /** Notification posted when controller will show the left view controller */
 extern NSString * const RNSwipeViewControllerLeftWillAppear;
@@ -55,6 +47,9 @@ extern NSString * const RNSwipeViewControllerBottomWillAppear;
 
 /** Notification posted when controller did show the bottom view controller */
 extern NSString * const RNSwipeViewControllerBottomDidAppear;
+
+#import <UIKit/UIKit.h>
+#import "RNSwipeViewControllerDelegate.h"
 
 /** Handles the organization and displaying of view controllers.
  
@@ -121,6 +116,10 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
  */
 @property (assign, nonatomic) CGFloat bottomVisibleHeight;
 
+///---------------------------------------------------------------------------------------
+/// @name Controller Status
+///---------------------------------------------------------------------------------------
+
 /** Utility method useable with KVO.
  
  @see visibleController
@@ -132,10 +131,10 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
  
  Possible values are of type RNSwipeVisible
  
-     RNSwipeVisibleLeft
-     RNSwipeVisibleCenter
-     RNSwipeVisibleRight
-     RNSwipeVisibleBottom
+ - RNSwipeVisibleLeft
+ - RNSwipeVisibleCenter
+ - RNSwipeVisibleRight
+ - RNSwipeVisibleBottom
  
  @see isToggled
  @see visibleController
@@ -148,6 +147,10 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
  @see visibleState
  */
 @property (readonly, nonatomic) UIViewController *visibleController;
+
+///---------------------------------------------------------------------------------------
+/// @name Controller Utilities
+///---------------------------------------------------------------------------------------
 
 /** Enable/disable the left view controller.
  
@@ -169,6 +172,10 @@ extern NSString * const RNSwipeViewControllerBottomDidAppear;
  @see canShowRight
  */
 @property (assign, nonatomic) BOOL canShowBottom;
+
+///---------------------------------------------------------------------------------------
+/// @name Controller Delegates
+///---------------------------------------------------------------------------------------
 
 /** Optional delegate to receive messages that a view controller is being displayed.
  
