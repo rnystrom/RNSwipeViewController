@@ -77,7 +77,7 @@ The only real KVO-purposed property in here is <code>isToggled</code>. If there 
 
 ## Status ##
 
-If you're interested in what your swipe controller looks like presently, you can ask the <code>visibleState<code> property what is showing. The possibilities are
+If you're interested in what your swipe controller looks like presently, you can ask the <code>visibleState</code> property what is showing. The possibilities are
 
 ``` objective-c
 RNSwipeVisibleLeft
