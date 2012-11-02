@@ -32,6 +32,8 @@ self.rightViewController = [self.storyboard instantiateViewControllerWithIdentif
 self.bottomViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"bottomViewController"];
 ```
 
+With minimal effort, your views are now setup.
+
 ## Config ##
 
 <img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/dimensions.jpg?raw=true" />
@@ -39,9 +41,9 @@ self.bottomViewController = [self.storyboard instantiateViewControllerWithIdenti
 You can customize the width of each view controller's panel at run-time. Make sure the views in your view controllers are prepared to be smaller than your device's width/height.
 
 ``` obejctive-c
-@property (assign, nonatomic) CGFloat leftVisibleWidth;
-@property (assign, nonatomic) CGFloat rightVisibleWidth;
-@property (assign, nonatomic) CGFloat bottomVisibleHeight;
+@property (assign, nonatomic) CGFloat leftVisibleWidth;     // default 200
+@property (assign, nonatomic) CGFloat rightVisibleWidth;    // default 200
+@property (assign, nonatomic) CGFloat bottomVisibleHeight;  // default 300
 ```
 
 ## Categories (optional) ##
