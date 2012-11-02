@@ -34,6 +34,10 @@ self.bottomViewController = [self.storyboard instantiateViewControllerWithIdenti
 
 With minimal effort, your views are now setup.
 
+## Performance ##
+
+Expect *decent* performance on the iPhone 4 or later. However on newer devices (4S+) you should expect 60fps.
+
 ## Config ##
 
 <img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/dimensions.jpg?raw=true" />
