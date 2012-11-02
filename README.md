@@ -60,7 +60,7 @@ You can also include the helpful [UIViewController+RNSwipeViewController](http:/
 @end
 ```
 
-## Delgation, Notification, and KVO ##
+## Delegation, Notification, and KVO ##
 
 I've included some helpers in case you need to know when and what view controllers are showing (or hiding). Take a look at the [documentation](http://rnystrom.github.com/RNSwipeViewController/index.html) for help with the delegate. Below I've listed the available <code>NSNotificationCenter</code> keys.
 
