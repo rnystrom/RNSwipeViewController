@@ -7,7 +7,7 @@ Note: As of now, RNSwipeViewController is intended for use with portrait orienta
 
 #### [View the Docs](http://rnystrom.github.com/RNSwipeViewController/index.html) ####
 
-[Check out the Demo](http://www.youtube.com/watch?v=5Un5OesiJW8&feature=youtu.be)
+[Check out the Demo](http://www.youtube.com/watch?v=5Un5OesiJW8&feature=youtu.be) *Excuse the graphics glitches.*
 
 ## Installation ##
 
