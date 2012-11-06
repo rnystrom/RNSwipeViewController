@@ -27,6 +27,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "RNDirectionPanGestureRecognizer.h"
 #import "UIView+Sizes.h"
+#import "UIApplication+AppDimensions.h"
 
 NSString * const RNSwipeViewControllerLeftWillAppear = @"com.whoisryannystrom.RNSwipeViewControllerLeftWillAppear";
 NSString * const RNSwipeViewControllerLeftDidAppear = @"com.whoisryannystrom.RNSwipeViewControllerLeftDidAppear";
@@ -143,6 +144,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     
     _centerLastPoint = CGPointZero;
     
+    [self _layoutCenterContainer];
     [self _layoutRightContainer];
     [self _layoutLeftContainer];
     [self _layoutBottomContainer];
@@ -179,25 +181,42 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     [super viewDidLayoutSubviews];
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self _resizeForOrienation:toInterfaceOrientation];
+}
+
 #pragma mark - Public methods
 
 - (void)showLeft {
+    [self showLeftWithDuration:kRNSwipeDefaultDuration];
+}
+
+- (void)showLeftWithDuration:(NSTimeInterval)duration {
     if (self.leftViewController) {
-        [self _sendCenterToPoint:CGPointMake(self.leftVisibleWidth, 0) panel:_leftContainer toPoint:_leftActive.origin duration:kRNSwipeDefaultDuration];
+        [self _sendCenterToPoint:CGPointMake(self.leftVisibleWidth, 0) panel:_leftContainer toPoint:_leftActive.origin duration:duration];
         self.visibleState = RNSwipeVisibleLeft;
     }
 }
 
 - (void)showRight {
+    [self showRightWithDuration:kRNSwipeDefaultDuration];
+}
+
+- (void)showRightWithDuration:(NSTimeInterval)duration {
     if (self.rightViewController) {
-        [self _sendCenterToPoint:CGPointMake(-1 * self.rightVisibleWidth, 0) panel:_rightContainer toPoint:_rightActive.origin duration:kRNSwipeDefaultDuration];
+        [self _sendCenterToPoint:CGPointMake(-1 * self.rightVisibleWidth, 0) panel:_rightContainer toPoint:_rightActive.origin duration:duration];
         self.visibleState = RNSwipeVisibleRight;
     }
 }
 
 - (void)showBottom {
+    [self showBottomWithDuration:kRNSwipeDefaultDuration];
+}
+
+- (void)showBottomWithDuration:(NSTimeInterval)duration {
     if (self.bottomViewController) {
-        [self _sendCenterToPoint:CGPointMake(0, -1 * self.bottomVisibleHeight) panel:_bottomContainer toPoint:_bottomActive.origin duration:kRNSwipeDefaultDuration];
+        [self _sendCenterToPoint:CGPointMake(0, -1 * self.bottomVisibleHeight) panel:_bottomContainer toPoint:_bottomActive.origin duration:duration];
         self.visibleState = RNSwipeVisibleBottom;
     }
 }
@@ -208,11 +227,16 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 #pragma mark - Layout
 
+- (void)_layoutCenterContainer {    
+    _centerOriginal = _centerContainer.bounds;
+    _centerOriginal.origin = CGPointZero;
+}
+
 - (void)_layoutRightContainer {
     _rightContainer.width = _rightVisibleWidth;
     
     _rightOriginal = _rightContainer.bounds;
-    _rightOriginal.origin.x = _centerOriginal.size.width;
+    _rightOriginal.origin.x = _centerContainer.width;
     
     _rightActive = _rightOriginal;
     _rightActive.origin.x = _centerContainer.width - _rightActive.size.width;
@@ -232,7 +256,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     _bottomContainer.height = self.bottomVisibleHeight;
     
     _bottomOriginal = _bottomContainer.bounds;
-    _bottomOriginal.origin.y = _centerOriginal.size.height;
+    _bottomOriginal.origin.y = _centerContainer.height;
     
     _bottomActive = _bottomOriginal;
     _bottomActive.origin.y = _centerContainer.height - _bottomActive.size.height;
@@ -377,13 +401,62 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     return _canShowRight;
 }
 
-#pragma mark - Gesture recognizer delegate 
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    return YES;
-}
-
 #pragma mark - Private Helpers
+
+- (void)_resizeForOrienation:(UIInterfaceOrientation)orientation {
+    CGSize sizeOriented = [UIApplication sizeInOrientation:orientation];
+    
+    CGRect centerFrame = _centerContainer.frame;
+    centerFrame.size = sizeOriented;
+    _centerContainer.frame = centerFrame;
+    centerFrame.origin = CGPointZero;
+    self.centerViewController.view.frame = centerFrame;
+    [_centerContainer layoutSubviews];
+    
+    [self _layoutCenterContainer];
+    
+    _fadeView.frame = centerFrame;
+    
+    self.view.frame = centerFrame;
+    
+    if (self.leftViewController) {
+        CGRect leftFrame = _leftContainer.frame;
+        leftFrame.size.height = sizeOriented.height;
+        leftFrame.size.width = self.leftVisibleWidth;
+        _leftContainer.frame = leftFrame;
+        leftFrame.origin = CGPointZero;
+        self.leftViewController.view.frame = leftFrame;
+        [_leftContainer layoutSubviews];
+        
+        [self _layoutLeftContainer];
+    }
+    
+    if (self.rightViewController) {
+        CGRect rightFrame = _rightContainer.frame;
+        rightFrame.size.height = sizeOriented.height;
+        rightFrame.size.width = self.rightVisibleWidth;
+        _rightContainer.frame = rightFrame;
+        rightFrame.origin = CGPointZero;
+        self.rightViewController.view.frame = rightFrame;
+        [_rightContainer layoutSubviews];
+        
+        [self _layoutRightContainer];
+    }
+    
+    if (self.bottomViewController) {
+        CGRect bottomFrame = _bottomContainer.frame;
+        bottomFrame.size.height = self.bottomVisibleHeight;
+        bottomFrame.size.width = sizeOriented.width;
+        _bottomContainer.frame = bottomFrame;
+        bottomFrame.origin = CGPointZero;
+        self.bottomViewController.view.frame = bottomFrame;
+        [_bottomContainer layoutSubviews];
+        
+        [self _layoutBottomContainer];
+    }
+    
+    [self resetView];
+}
 
 - (void)_layoutContainersAnimated:(BOOL)animate duration:(NSTimeInterval)duration {
     [[NSNotificationCenter defaultCenter] postNotificationName:RNSwipeViewControllerCenterWillAppear object:nil];
@@ -397,7 +470,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     CGRect rightFrame = self.view.bounds;
     CGRect bottomFrame = self.view.bounds;
 
-    leftFrame.size.width = self.leftVisibleWidth;;
+    leftFrame.size.width = self.leftVisibleWidth;
     leftFrame.origin.x = leftFrame.size.width * -1;
     
     rightFrame.size.width = self.rightVisibleWidth;
@@ -593,6 +666,15 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
                          }
                      }];
 }
+
+
+#pragma mark - Gesture delegate
+
+- (BOOL)gestureRecognizerShouldBegin:(RNDirectionPanGestureRecognizer *)gestureRecognizer {
+    return YES;
+}
+
+#pragma mark - Gesture handler
 
 - (void)_handlePan:(RNDirectionPanGestureRecognizer*)recognizer {
     // beginning a pan gesture

@@ -74,17 +74,38 @@ extern NSString * const RNSwipeViewControllerCenterDidAppear;
  */
 - (void)showLeft;
 
+/** Show the left view controller with a user-defined duration.
+ 
+ @param duration The duration of the animation.
+ @see resetView
+ */
+- (void)showLeftWithDuration:(NSTimeInterval)duration;
+
 /** Show the right view controller
  
  @see resetView
  */
 - (void)showRight;
 
+/** Show the right view controller with a user-defined duration.
+ 
+ @param duration The duration of the animation.
+ @see resetView
+ */
+- (void)showRightWithDuration:(NSTimeInterval)duration;
+
 /** Show the bottom view controller
  
  @see resetView
  */
 - (void)showBottom;
+
+/** Show the bottom view controller with a user-defined duration.
+ 
+ @param duration The duration of the animation.
+ @see resetView
+ */
+- (void)showBottomWithDuration:(NSTimeInterval)duration;
 
 /** Hide all view controllers and show the center controller.
  

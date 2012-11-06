@@ -36,6 +36,7 @@
 		86EA7671164440BA0019E5E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7669164440BA0019E5E4 /* InfoPlist.strings */; };
 		86EA7672164440BA0019E5E4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EA766B164440BA0019E5E4 /* MainStoryboard.storyboard */; };
 		86EA7673164440BA0019E5E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA766D164440BA0019E5E4 /* main.m */; };
+		86F09D03164961BE00985A7E /* UIApplication+AppDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F09D02164961BE00985A7E /* UIApplication+AppDimensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		86EA766A164440BA0019E5E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		86EA766C164440BA0019E5E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		86EA766D164440BA0019E5E4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = example/main.m; sourceTree = SOURCE_ROOT; };
+		86F09D01164961BE00985A7E /* UIApplication+AppDimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+AppDimensions.h"; sourceTree = "<group>"; };
+		86F09D02164961BE00985A7E /* UIApplication+AppDimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+AppDimensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				86EA76501644402F0019E5E4 /* UIView+Sizes.m */,
 				86526383164466E000379EA3 /* UIViewController+RNSwipeViewController.h */,
 				86526384164466E000379EA3 /* UIViewController+RNSwipeViewController.m */,
+				86F09D01164961BE00985A7E /* UIApplication+AppDimensions.h */,
+				86F09D02164961BE00985A7E /* UIApplication+AppDimensions.m */,
 			);
 			path = RNSwipeViewController;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				86DF008C1644662900ECA1B8 /* RNToolsViewController.m in Sources */,
 				86526385164466E000379EA3 /* UIViewController+RNSwipeViewController.m in Sources */,
 				86526389164469AA00379EA3 /* RNLeftViewController.m in Sources */,
+				86F09D03164961BE00985A7E /* UIApplication+AppDimensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
