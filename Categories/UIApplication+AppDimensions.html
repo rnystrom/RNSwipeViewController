@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>RNSwipeViewControllerDelegate Protocol Reference</title>
+		<title>UIApplication(AppDimensions) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">RNSwipeViewControllerDelegate Protocol Reference</h1>
+				<h1 class="hideInXcode">UIApplication(AppDimensions) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,13 +40,13 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/currentSize">&nbsp;&nbsp;&nbsp;&nbsp;+ currentSize</option>
+	
+	<option value="//api/name/sizeInOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;+ sizeInOrientation:</option>
 	
 	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/swipeController:didShowController:">&nbsp;&nbsp;&nbsp;&nbsp;- swipeController:didShowController:</option>
-	
-	<option value="//api/name/swipeController:willShowController:">&nbsp;&nbsp;&nbsp;&nbsp;- swipeController:willShowController:</option>
 	
 	
 	
@@ -64,30 +64,32 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Utilties">Utilties</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentSize">currentSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sizeInOrientation:">sizeInOrientation:</a></span></li>
+	
 </ul></li>
 
 
-
-
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/swipeController:didShowController:">swipeController:didShowController:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/swipeController:willShowController:">swipeController:willShowController:</a></span></li>
-	
-</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="RNSwipeViewControllerDelegate Protocol Reference" name="top"></a>
+				<a title="UIApplication(AppDimensions) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,18 +98,15 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">RNSwipeViewControllerDelegate Protocol Reference</h1>
+						<h1 class="title title-header">UIApplication(AppDimensions) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSObject</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">RNSwipeViewControllerDelegate.h</td>
+	<td class="specification-value">UIApplication+AppDimensions.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -123,21 +122,21 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
+						<a title="Utilties" name="task_Utilties"></a>
 						
-						
-
+<h3 class="subsubtitle task-title">Utilties</h3>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/swipeController:willShowController:">&ndash;&nbsp;swipeController:willShowController:</a></code>
-		<span class="tooltip"><p>Informs the delegate that a view controller is going to appear.</p></span>
+		<code><a href="#//api/name/currentSize">+&nbsp;currentSize</a></code>
+		<span class="tooltip"><p>Get the current screen size.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/swipeController:didShowController:">&ndash;&nbsp;swipeController:didShowController:</a></code>
-		<span class="tooltip"><p>Informs the delegate that a view controller is did appear.</p></span>
+		<code><a href="#//api/name/sizeInOrientation:">+&nbsp;sizeInOrientation:</a></code>
+		<span class="tooltip"><p>Get the screen size for a particular orientation.</p></span>
 	</span>
 	
 	
@@ -152,40 +151,22 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/swipeController:didShowController:" title="swipeController:didShowController:"></a>
-	<h3 class="subsubtitle method-title">swipeController:didShowController:</h3>
+	<a name="//api/name/currentSize" title="currentSize"></a>
+	<h3 class="subsubtitle method-title">currentSize</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Informs the delegate that a view controller is did appear.</p>
+		<p>Get the current screen size.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)swipeController:(RNSwipeViewController *)<em>swipeController</em> didShowController:(UIViewController *)<em>controller</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>swipeController</em></dt>
-			<dd><p>The swipe controller handling touch events and presentation of a view controller.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>controller</em></dt>
-			<dd><p>The view controller that was displayed</p></dd>
-		</dl>
-		
-	</div>
+	<div class="method-subsection method-declaration"><code>+ (CGSize)currentSize</code></div>
 	
 	
 	
@@ -197,50 +178,37 @@
 	
 	
 	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/swipeController:willShowController:">&ndash; swipeController:willShowController:</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">RNSwipeViewControllerDelegate.h</code><br />
+		<code class="declared-in-ref">UIApplication+AppDimensions.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/swipeController:willShowController:" title="swipeController:willShowController:"></a>
-	<h3 class="subsubtitle method-title">swipeController:willShowController:</h3>
+	<a name="//api/name/sizeInOrientation:" title="sizeInOrientation:"></a>
+	<h3 class="subsubtitle method-title">sizeInOrientation:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Informs the delegate that a view controller is going to appear.</p>
+		<p>Get the screen size for a particular orientation.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)swipeController:(RNSwipeViewController *)<em>swipeController</em> willShowController:(UIViewController *)<em>controller</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (CGSize)sizeInOrientation:(UIInterfaceOrientation)<em>orientation</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>swipeController</em></dt>
-			<dd><p>The swipe controller handling touch events and presentation of a view controller.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>controller</em></dt>
-			<dd><p>The view controller to be displayed.</p></dd>
+			<dt><em>orientation</em></dt>
+			<dd><p>The orientation for the desired screen size.</p></dd>
 		</dl>
 		
 	</div>
@@ -254,27 +222,20 @@
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/swipeController:didShowController:">&ndash; swipeController:didShowController:</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">RNSwipeViewControllerDelegate.h</code><br />
+		<code class="declared-in-ref">UIApplication+AppDimensions.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
 				</div>
