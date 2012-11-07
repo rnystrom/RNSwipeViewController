@@ -607,7 +607,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
         return 0.f;
     }
     
-    if (abs(_centerContainer.top) >= self.bottomVisibleHeight) {
+    if (fabsf(_centerContainer.top) >= self.bottomVisibleHeight) {
         return self.bottomVisibleHeight * -1;
     }
     return translation + _centerLastPoint.y;
