@@ -44,6 +44,8 @@ Expect *decent* performance on the iPhone 4 or later. However on newer devices (
 
 <img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/dimensions.jpg?raw=true" />
 
+<img src="https://github.com/rnystrom/RNSwipeViewController/blob/master/images/landscape.jpg?raw=true" />
+
 You can customize the width of each view controller's panel at run-time. Make sure the views in your view controllers are prepared to be smaller than your device's width/height.
 
 ``` obejctive-c
