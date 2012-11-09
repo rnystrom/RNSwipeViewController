@@ -26,6 +26,7 @@
 		86C764D516447849000A0F31 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C764C816447849000A0F31 /* Icon@2x.png */; };
 		86C764D616447849000A0F31 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C764C916447849000A0F31 /* iTunesArtwork.png */; };
 		86C764D716447849000A0F31 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C764CA16447849000A0F31 /* iTunesArtwork@2x.png */; };
+		86D329A0164C7DAC005CE5EA /* iPad_MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D3299E164C7DAC005CE5EA /* iPad_MainStoryboard.storyboard */; };
 		86DF0089164464FC00ECA1B8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DF0087164464FC00ECA1B8 /* MainStoryboard.storyboard */; };
 		86DF008C1644662900ECA1B8 /* RNToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DF008B1644662900ECA1B8 /* RNToolsViewController.m */; };
 		86EA76511644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EA764B1644402F0019E5E4 /* RNDirectionPanGestureRecognizer.m */; };
@@ -62,6 +63,7 @@
 		86C764C816447849000A0F31 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		86C764C916447849000A0F31 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		86C764CA16447849000A0F31 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		86D3299F164C7DAC005CE5EA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = example/en.lproj/iPad_MainStoryboard.storyboard; sourceTree = "<group>"; };
 		86DF0088164464FC00ECA1B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = example/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		86DF008A1644662900ECA1B8 /* RNToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNToolsViewController.h; path = example/RNToolsViewController.h; sourceTree = "<group>"; };
 		86DF008B1644662900ECA1B8 /* RNToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNToolsViewController.m; path = example/RNToolsViewController.m; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				86526387164469AA00379EA3 /* RNLeftViewController.h */,
 				86526388164469AA00379EA3 /* RNLeftViewController.m */,
 				86DF0087164464FC00ECA1B8 /* MainStoryboard.storyboard */,
+				86D3299E164C7DAC005CE5EA /* iPad_MainStoryboard.storyboard */,
 				86DF008A1644662900ECA1B8 /* RNToolsViewController.h */,
 				86DF008B1644662900ECA1B8 /* RNToolsViewController.m */,
 				86EA7659164440A80019E5E4 /* RNAppDelegate.h */,
@@ -268,6 +271,7 @@
 				86C764D516447849000A0F31 /* Icon@2x.png in Resources */,
 				86C764D616447849000A0F31 /* iTunesArtwork.png in Resources */,
 				86C764D716447849000A0F31 /* iTunesArtwork@2x.png in Resources */,
+				86D329A0164C7DAC005CE5EA /* iPad_MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +298,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		86D3299E164C7DAC005CE5EA /* iPad_MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86D3299F164C7DAC005CE5EA /* en */,
+			);
+			name = iPad_MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		86DF0087164464FC00ECA1B8 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

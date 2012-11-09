@@ -8,6 +8,8 @@
 
 #import "RNExampleViewController.h"
 
+#define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+
 @interface RNExampleViewController ()
 
 @end
@@ -31,6 +33,12 @@
     self.leftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"];
     self.rightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"];
     self.bottomViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"bottomViewController"];
+    
+    if (IS_IPAD) {
+        self.leftVisibleWidth = 500;
+        self.rightVisibleWidth = 300;
+        self.bottomVisibleHeight = 500;
+    }
     
     self.swipeDelegate = self;
 }

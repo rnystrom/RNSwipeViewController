@@ -234,6 +234,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 - (void)_layoutRightContainer {
     _rightContainer.width = _rightVisibleWidth;
+    self.rightViewController.view.width = _rightContainer.width;
     
     _rightOriginal = _rightContainer.bounds;
     _rightOriginal.origin.x = _centerContainer.width;
@@ -244,6 +245,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 - (void)_layoutLeftContainer {
     _leftContainer.width = self.leftVisibleWidth;
+    self.leftViewController.view.width = _leftContainer.width;
     
     _leftOriginal = _leftContainer.bounds;
     _leftOriginal.origin.x = - _leftOriginal.size.width;
@@ -254,6 +256,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 - (void)_layoutBottomContainer {
     _bottomContainer.height = self.bottomVisibleHeight;
+    self.bottomViewController.view.height = _bottomContainer.height;
     
     _bottomOriginal = _bottomContainer.bounds;
     _bottomOriginal.origin.y = _centerContainer.height;
@@ -465,19 +468,6 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     }
     
     [self.centerViewController viewWillAppear:animate];
-    
-    CGRect leftFrame = self.view.bounds;
-    CGRect rightFrame = self.view.bounds;
-    CGRect bottomFrame = self.view.bounds;
-
-    leftFrame.size.width = self.leftVisibleWidth;
-    leftFrame.origin.x = leftFrame.size.width * -1;
-    
-    rightFrame.size.width = self.rightVisibleWidth;
-    rightFrame.origin.x = _centerContainer.frame.origin.x + _centerContainer.frame.size.width;
-    
-    bottomFrame.size.height = self.bottomVisibleHeight;
-    bottomFrame.origin.y = self.view.bounds.size.height;
     
     void (^block)(void) = [self _toResetContainers];
     
