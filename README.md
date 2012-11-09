@@ -5,7 +5,9 @@ Seemlessly integrate beautifully functional view controllers into your app that 
 
 ~~Note: As of now, RNSwipeViewController is intended for use with portrait orientation on iPhone/iPod only.~~
 
-Orientation support added on 11/6/12. Still intended devices are iPhone/iPod.
+~~Orientation support added on 11/6/12. Still intended devices are iPhone/iPod.~~
+
+iPad support added along with example on 11/8/12.
 
 #### [View the Docs](http://rnystrom.github.com/RNSwipeViewController/index.html) ####
 
