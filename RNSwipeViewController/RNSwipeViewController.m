@@ -129,18 +129,23 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    CGRect frame = self.view.bounds;
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        frame = CGRectMake(0, 0, self.view.height, self.view.width);
+    }
     
-    _centerContainer = [[UIView alloc] initWithFrame:self.view.bounds];
+    _centerContainer = [[UIView alloc] initWithFrame:frame];
     _centerContainer.clipsToBounds = NO;
     _centerContainer.layer.masksToBounds = NO;
     
     _centerOriginal = _centerContainer.frame;
     
-    _rightContainer = [[UIView alloc] initWithFrame:self.view.bounds];
+    _rightContainer = [[UIView alloc] initWithFrame:frame];
     
-    _leftContainer = [[UIView alloc] initWithFrame:self.view.bounds];
+    _leftContainer = [[UIView alloc] initWithFrame:frame];
     
-    _bottomContainer = [[UIView alloc] initWithFrame:self.view.bounds];
+    _bottomContainer = [[UIView alloc] initWithFrame:frame];
     
     _centerLastPoint = CGPointZero;
     
