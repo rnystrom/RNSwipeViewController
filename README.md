@@ -38,6 +38,37 @@ self.bottomViewController = [self.storyboard instantiateViewControllerWithIdenti
 
 With minimal effort, your views are now setup.
 
+#### Setup in Code
+
+If you want to avoid Storyboards (I don't blame you), you can setup everything in code. Here is an example from the AppDelegate of a  app of mine.
+
+``` objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    // PTMasterController is a subclass of RNSwipeViewController
+    PTMasterController *masterController = [[PTMasterController alloc] init];
+ 
+    PTSchemeController *scheme = [[PTSchemeController alloc] init];
+    PTUtilityController *utility = [[PTUtilityController alloc] init];
+    PTWritingController *writing = [[PTWritingController alloc] init];
+    
+    masterController.centerViewController = writing;
+    masterController.rightViewController = utility;
+    masterController.leftViewController = scheme;
+    
+    masterController.leftVisibleWidth = kGridSize + 3 * kPadding;
+    masterController.rightVisibleWidth = kGridSize * 2 + 3 * kPadding;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+ 
+    self.window.rootViewController = masterController;
+ 
+    self.window.backgroundColor = [UIColor underPageBackgroundColor];
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+```
+
 ## Performance ##
 
 Expect *decent* performance on the iPhone 4 or later. However on newer devices (4S+) you should expect 60fps.
