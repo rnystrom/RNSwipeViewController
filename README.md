@@ -118,6 +118,18 @@ NSString * const RNSwipeViewControllerCenterDidAppear;
 
 The only real KVO-purposed property in here is <code>isToggled</code>. If there is a need for more options I'll add them.
 
+## Percent Protocol ##
+
+#### New Feature
+
+Your left, right, and bottom view controllers can optionally conform to the <code>RNRevealViewControllerProtocol</code> protocol in order to receive updates on how far the view controller is presented. The percent is an integer 0 to 100. The only method this protocol uses is:
+
+``` objective-c
+- (void)changedPercentReveal:(NSInteger)percent;
+```
+
+The example updates views in the left and right controller.
+
 ## Status ##
 
 If you're interested in what your swipe controller looks like presently, you can ask the <code>visibleState</code> property what is showing. The possibilities are

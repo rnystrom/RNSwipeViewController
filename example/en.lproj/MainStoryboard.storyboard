@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3103" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Example View Controller-->
@@ -25,18 +25,27 @@
                     <view key="view" contentMode="scaleToFill" id="hF6-Nu-xlk">
                         <rect key="frame" x="0.0" y="20" width="200" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="6z0-GK-p0f">
+                                <rect key="frame" x="25" y="127" width="150" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" red="0.56451148370000004" green="1" blue="0.46124176560000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="progressBar" destination="6z0-GK-p0f" id="EER-lH-JN5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wR-ux-oV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="836" y="174"/>
         </scene>
-        <!--View Controller-->
+        <!--Bottom View Controller-->
         <scene sceneID="2Vl-e9-ZfG">
             <objects>
-                <viewController storyboardIdentifier="bottomViewController" id="SSu-XY-qlk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bottomViewController" id="SSu-XY-qlk" customClass="RNBottomViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcE-iT-4f1">
                         <rect key="frame" x="0.0" y="20" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -48,16 +57,26 @@
             </objects>
             <point key="canvasLocation" x="1086" y="845"/>
         </scene>
-        <!--View Controller-->
+        <!--Right View Controller-->
         <scene sceneID="7pV-b6-HTP">
             <objects>
-                <viewController storyboardIdentifier="rightViewController" id="cPS-IF-tyv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rightViewController" id="cPS-IF-tyv" customClass="RNRightViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9IL-n0-zCs">
                         <rect key="frame" x="0.0" y="20" width="200" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="82w-Qw-h1O">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.57254901960000004" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.84386957910000004" green="0.1883426315" blue="0.25255578540000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="animateView" destination="82w-Qw-h1O" id="9RM-dy-B2Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMv-a5-K0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,11 +159,23 @@
         </scene>
     </scenes>
     <classes>
+        <class className="RNBottomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RNBottomViewController.h"/>
+        </class>
         <class className="RNExampleViewController" superclassName="RNSwipeViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RNExampleViewController.h"/>
         </class>
         <class className="RNLeftViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RNLeftViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+            </relationships>
+        </class>
+        <class className="RNRightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RNRightViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="animateView" candidateClass="UIView"/>
+            </relationships>
         </class>
         <class className="RNSwipeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RNSwipeViewController.h"/>

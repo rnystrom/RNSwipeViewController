@@ -9,6 +9,7 @@
 #import "RNLeftViewController.h"
 
 @interface RNLeftViewController ()
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @end
 
@@ -53,6 +54,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)changedPercentReveal:(NSInteger)percent {
+    self.progressBar.progress = percent / 100.f;
 }
 
 @end

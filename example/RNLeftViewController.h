@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RNRevealViewControllerProtocol.h"
 
 @interface RNLeftViewController : UIViewController
+<RNRevealViewControllerProtocol>
 
 @end
