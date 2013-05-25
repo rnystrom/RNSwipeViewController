@@ -242,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RN;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ryan Nystrom";
 			};
 			buildConfigurationList = 86A9F8BB1641AD3D00809316 /* Build configuration list for PBXProject "RNSwipeViewController" */;
