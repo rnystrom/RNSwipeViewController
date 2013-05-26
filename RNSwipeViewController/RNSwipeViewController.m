@@ -596,7 +596,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 }
 
 - (CGFloat)_filterLeft:(CGFloat)translation {
-    if (! self.canShowRight) {
+    if (self.canShowRight == NO && _centerContainer.left == 0) {
         return 0.f;
     }
     
@@ -611,7 +611,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 }
 
 - (CGFloat)_filterRight:(CGFloat)translation {
-    if (! self.canShowLeft) {
+    if (self.canShowLeft == NO && _centerContainer.left == 0) {
         return 0.f;
     }
     
