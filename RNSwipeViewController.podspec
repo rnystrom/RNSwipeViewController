@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Ryan Nystrom" => "rnystrom@whoisryannystrom.com" }
   s.source       = { :git => "https://github.com/rnystrom/RNSwipeViewController.git", :tag => "0.1.0" }
-  s.source_files = 'RNSwipeViewController/RNSwipeViewController.{h,m}'
+  s.source_files = 'RNSwipeViewController/*.{h,m}'
   s.platform     = :ios
   s.ios.deployment_target = '6.0'
   s.requires_arc = true
