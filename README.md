@@ -158,4 +158,4 @@ If you've used this project in a live app, please <a href="mailTo:rnystrom@whois
 
 ## License ##
 
-See LICENSE
+See [LICENSE](https://raw.github.com/rnystrom/RNSwipeViewController/0.1.0/LICENSE)
