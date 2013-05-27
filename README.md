@@ -143,6 +143,13 @@ Or, if you need to access the presented view controller directly, you can do so.
 UIViewController *visibleController = self.swipeController.visibleController;
 ```
 
+## Apps
+
+If you've used this project in a live app, please <a href="mailTo:rnystrom@whoisryannystrom.com">let me know</a>! Nothing makes me happier than seeing someone else take my work and go wild with it.
+
+* [Poetreat](https://itunes.apple.com/us/app/poetreat-write-quick-simple/id636392647?ls=1&mt=8)
+* [WeatherFy](https://itunes.apple.com/us/app/weatherfy/id588926390?mt=8&ign-mpt=uo%3D4)
+
 ## Contact ##
 
 * [@nystrorm](https://twitter.com/_ryannystrom) on Twitter
