@@ -45,6 +45,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 @interface RNSwipeViewController ()
 
 @property (assign, nonatomic, readwrite) BOOL isToggled;
+@property (assign, nonatomic) BOOL moveToCenter;
 
 @end
 
@@ -177,7 +178,10 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self _layoutContainersAnimated:NO duration:0.f];
+    if (self.moveToCenter) {
+        [self _layoutContainersAnimated:NO duration:0.f];
+        self.moveToCenter = NO;
+    }
 }
 
 - (void)viewDidLayoutSubviews {
