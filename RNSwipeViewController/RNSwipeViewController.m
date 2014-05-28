@@ -667,7 +667,7 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
                              }
                              else if (_activeContainer == _leftContainer) {
                                  notificationKey = RNSwipeViewControllerLeftDidAppear;
-                                 controller = self.rightViewController;
+                                 controller = self.leftViewController;
                              }
                              else if (_activeContainer == _rightContainer) {
                                  notificationKey = RNSwipeViewControllerRightDidAppear;
