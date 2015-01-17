@@ -176,8 +176,10 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self _layoutContainersAnimated:NO duration:0.f];
+    if (! self.visibleController.presentedViewController.isBeingDismissed) {
+        [super viewWillAppear:animated];
+        [self _layoutContainersAnimated:NO duration:0.f];
+    }
 }
 
 - (void)viewDidLayoutSubviews {
