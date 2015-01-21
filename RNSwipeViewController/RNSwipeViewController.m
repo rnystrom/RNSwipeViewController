@@ -391,6 +391,32 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
     }
 }
 
+- (void)setSwipingDisabled:(BOOL)swipingDisabled {
+    
+    BOOL leftEnabled = ! swipingDisabled;
+    BOOL rightEnabled = ! swipingDisabled;
+    BOOL bottomEnabled = ! swipingDisabled;
+    
+    switch (self.visibleState) {
+        case RNSwipeVisibleLeft:
+            leftEnabled = YES;
+            break;
+        case RNSwipeVisibleRight:
+            rightEnabled = YES;
+            break;
+        case RNSwipeVisibleBottom:
+            bottomEnabled = YES;
+            break;
+        case RNSwipeVisibleCenter:
+            break;
+    }
+    self.canShowLeft = leftEnabled;
+    self.canShowRight = rightEnabled;
+    self.canShowBottom = bottomEnabled;
+    
+    _swipingDisabled = swipingDisabled;
+}
+
 #pragma mark - Getters
 
 - (UIViewController*)visibleController {
