@@ -240,6 +240,14 @@ extern NSString * const RNSwipeViewControllerCenterDidAppear;
  */
 @property (assign, nonatomic) BOOL canTapOut;
 
+/** Disable/Enable swiping to all other controllers besides the current one.
+ 
+ @see canShowLeft
+ @see canShowRight
+ @see canShowBottom
+ */
+@property (assign, nonatomic) BOOL swipingDisabled;
+
 ///---------------------------------------------------------------------------------------
 /// @name Controller Delegates
 ///---------------------------------------------------------------------------------------

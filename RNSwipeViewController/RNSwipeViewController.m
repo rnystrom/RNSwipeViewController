@@ -176,8 +176,10 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self _layoutContainersAnimated:NO duration:0.f];
+    if (! self.visibleController.presentedViewController.isBeingDismissed) {
+        [super viewWillAppear:animated];
+        [self _layoutContainersAnimated:NO duration:0.f];
+    }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -387,6 +389,32 @@ static CGFloat kRNSwipeDefaultDuration = 0.3f;
         [self _layoutBottomContainer];
         [self _layoutContainersAnimated:NO duration:0.f];
     }
+}
+
+- (void)setSwipingDisabled:(BOOL)swipingDisabled {
+    
+    BOOL leftEnabled = ! swipingDisabled;
+    BOOL rightEnabled = ! swipingDisabled;
+    BOOL bottomEnabled = ! swipingDisabled;
+    
+    switch (self.visibleState) {
+        case RNSwipeVisibleLeft:
+            leftEnabled = YES;
+            break;
+        case RNSwipeVisibleRight:
+            rightEnabled = YES;
+            break;
+        case RNSwipeVisibleBottom:
+            bottomEnabled = YES;
+            break;
+        case RNSwipeVisibleCenter:
+            break;
+    }
+    self.canShowLeft = leftEnabled;
+    self.canShowRight = rightEnabled;
+    self.canShowBottom = bottomEnabled;
+    
+    _swipingDisabled = swipingDisabled;
 }
 
 #pragma mark - Getters
